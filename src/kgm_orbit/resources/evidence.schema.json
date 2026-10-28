@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Disease evidence bundle",
+  "type": "object",
+  "required": ["claims", "modules", "sources", "trace"],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "subject", "module_id", "head", "source_id", "unit_ids", "decision", "support_margin"],
+        "properties": {
+          "claim_id": {"type": "string", "minLength": 1},
+          "head": {"enum": ["D", "S"]},
+          "decision": {"enum": ["accepted", "refuted", "conflict", "unresolved"]},
+          "support_margin": {"type": "number"},
+          "unit_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["module_id", "head", "genes", "directions", "weights", "claim_ids"],
+        "properties": {
+          "module_id": {"type": "string"},
+          "head": {"enum": ["D", "S"]},
+          "genes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "directions": {"type": "array", "items": {"enum": [-1, 1]}},
+          "weights": {"type": "array", "items": {"type": "number", "exclusiveMinimum": 0}},
+          "claim_ids": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}}
+        }
+      }
+    },
+    "sources": {"type": "object"},
+    "trace": {"type": "array"}
+  }
+}
