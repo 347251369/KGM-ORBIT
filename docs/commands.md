@@ -40,4 +40,3 @@ kgm-orbit report --packet explanation.json --service service.json --output repor
 
 `explain` calculates the full-score attribution locally and links modules to their retained evidence. The example uses 64 initial quadrature nodes, five selected modules and a tolerance of 1e-8. `report` supplies computed outputs and linked evidence to RIA for risk assessment, module interpretation, and a conclusion. Each section is verified against model outputs and sources. Numerical references are filled from the packet, and the report includes contributions and citations.
 
-See the [interface reference](interfaces.md) for saved-fold attribution.
