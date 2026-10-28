@@ -22,7 +22,7 @@ Python 3.10+, NumPy, pandas, SciPy, scikit-learn, sentence-transformers, and PyT
 
 3. Configure the model service and retrieval sources using the [configuration reference](docs/configuration_reference.md). Set the API key in `DEEPSEEK_API_KEY`. Evidence construction uses a text encoder and verified validation claims to train ESA and select its verification threshold.
 
-The model service uses `deepseek-v4-flash-0731`. Retrieval supports PubMed, Reactome, Open Targets, Expression Atlas, PMC full text, and local source records.
+The model service uses `deepseek-v4-flash-0731`. Retrieval supports PubMed, Reactome, Open Targets, Expression Atlas.
 
 ## Data Downloads
 
