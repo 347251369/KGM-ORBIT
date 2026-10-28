@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the KGM-ORBIT manuscript and the software version used."
+title: "KGM-ORBIT"
+type: software
+authors:
+  - name: "KGM-ORBIT research team"
+version: 0.1.0
+date-released: 2026-10-26

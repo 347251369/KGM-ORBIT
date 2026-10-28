@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kgm-orbit"
+version = "0.1.0"
+description = "Disease evidence construction, hierarchical risk modeling and evidence-linked interpretation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary research software"}
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "scipy>=1.15,<2", "scikit-learn>=1.7,<1.8", "jsonschema>=4.19,<5", "torch>=2.2,<3"]
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers>=3,<6"]
+
+[project.scripts]
+kgm-orbit = "kgm_orbit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"kgm_orbit.resources" = ["prompts/*.txt", "*.json"]
+
